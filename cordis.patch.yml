@@ -1,0 +1,7 @@
+# dsh-table-lens —— DSH bundle patch
+# 纯前端插件：宿主侧只有一个空壳（让 bundle 能被配置树挂上），
+# 真正的功能全在 client.js 里（Web 界面加载后自动生效）。
+
+- insert:
+    - id: dsh-table-lens
+      name: dsh-table-lens

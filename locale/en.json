@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "Table Lens (dsh-table-lens)",
+    "description": "Turns Markdown tables in chat and document previews into a large sortable, filterable table with a frozen first column and CSV export. Tables in the transcript also get borders, zebra rows and hover highlight."
+  }
+}

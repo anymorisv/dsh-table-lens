@@ -1,0 +1,50 @@
+{
+  "name": "dsh-table-lens",
+  "version": "1.0.0",
+  "description": "DSH Web 表格放大镜：把聊天和文档里的 Markdown 表格变成可排序、可筛选、可冻结首列、可导出 CSV 的大表格。",
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "table",
+    "markdown",
+    "ui"
+  ],
+  "type": "module",
+  "main": "index.js",
+  "icon": "./icon.svg",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg",
+    "README.md",
+    "LICENSE"
+  ],
+  "author": "Sigmund",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anymorisv/dsh-table-lens.git"
+  },
+  "homepage": "https://github.com/anymorisv/dsh-table-lens#readme",
+  "bugs": {
+    "url": "https://github.com/anymorisv/dsh-table-lens/issues"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    }
+  }
+}

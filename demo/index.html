@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>dsh-table-lens · 本地演示</title>
+  <style>
+    :root { color-scheme: light; }
+    body {
+      margin: 0;
+      padding: 48px 24px 96px;
+      font-family: "PingFang SC", "Microsoft YaHei", system-ui, -apple-system, "Segoe UI", sans-serif;
+      color: #17181c;
+      background: #fff;
+      line-height: 1.7;
+    }
+    main { max-width: 900px; margin: 0 auto; }
+    h1 { font-size: 26px; margin: 0 0 8px; letter-spacing: .2px; }
+    .lead { margin: 0 0 8px; color: #4b5563; }
+    .tip {
+      margin: 18px 0 40px;
+      padding: 12px 16px;
+      border: 1px solid #dbeafe;
+      border-left: 3px solid #2563eb;
+      border-radius: 8px;
+      background: #f5f9ff;
+      color: #1f2937;
+      font-size: 14px;
+    }
+    h2 { font-size: 18px; margin: 40px 0 12px; }
+    .note { color: #6b7280; font-size: 13px; margin: 6px 0 0; }
+    table { border-collapse: collapse; }
+    code { font-family: ui-monospace, "Cascadia Code", Consolas, monospace; font-size: 12.5px; }
+    footer { margin-top: 56px; color: #9ca3af; font-size: 12.5px; }
+    @media (prefers-color-scheme: dark) {
+      :root { color-scheme: dark; }
+      body { color: #e7eaf0; background: #12151a; }
+      .lead, .note, footer { color: #9aa3b2; }
+      .tip { background: #1b2433; border-color: #2a3a52; color: #dbe3ef; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <h1>dsh-table-lens · 表格放大镜</h1>
+  <p class="lead">
+    这是插件的本地演示页：它加载同一份 <code>client.js</code>，所以你在下面看到的效果，和装进 DSH 后一模一样。
+  </p>
+  <div class="tip">
+    <strong>怎么玩：</strong>点下面任意一张表格 → 弹出大表；点表头排序；顶部输入框筛选（空格分词 = 同时满足）；
+    试试「冻结首列」和「紧凑」；<code>Esc</code> 关闭，<code>/</code> 跳到搜索框。
+  </div>
+
+  <h2>示例一：角色 × 环节</h2>
+  <table>
+    <thead>
+      <tr><th>环节</th><th>老板</th><th>技师</th><th>学徒</th><th>耗时(分钟)</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>补货</td><td>看库存、下单/比价</td><td>报缺料</td><td>搬货、送货</td><td>12</td></tr>
+      <tr><td>生产</td><td>定配方、排工位</td><td>按配方+工时做出配件，品质看技能</td><td>做低阶件练手</td><td>45</td></tr>
+      <tr><td>接单</td><td>定价、接预约、排班</td><td>施工、试车、返工</td><td>打下手</td><td>8</td></tr>
+      <tr><td>销售</td><td>零售/批发给其他店</td><td>推荐套餐</td><td>—</td><td>5</td></tr>
+      <tr><td>非法</td><td>决定接不接脏件、藏工位</td><td>装脏件/换牌/氮气</td><td>—</td><td>30</td></tr>
+      <tr><td>账目</td><td>工资、税、竞标信誉</td><td>拿工资/提成</td><td>学徒工资</td><td>3</td></tr>
+    </tbody>
+  </table>
+  <p class="note">列少、行也少——放大层会很紧凑，排序和筛选依然好用。</p>
+
+  <h2>示例二：宽表（9 列，测横向滚动与冻结首列）</h2>
+  <table>
+    <thead>
+      <tr><th>工位</th><th>周一</th><th>周二</th><th>周三</th><th>周四</th><th>周五</th><th>周六</th><th>周日</th><th>总工时</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>举升机 A</td><td>阿强</td><td>阿强</td><td>小美</td><td>小美</td><td>阿强</td><td>—</td><td>—</td><td>32</td></tr>
+      <tr><td>举升机 B</td><td>小美</td><td>老陈</td><td>老陈</td><td>阿强</td><td>小美</td><td>老陈</td><td>—</td><td>38</td></tr>
+      <tr><td>轮胎位</td><td>学徒甲</td><td>学徒甲</td><td>学徒乙</td><td>学徒乙</td><td>学徒甲</td><td>学徒乙</td><td>学徒乙</td><td>44</td></tr>
+      <tr><td>喷漆房</td><td>—</td><td>老陈</td><td>老陈</td><td>—</td><td>老陈</td><td>老陈</td><td>—</td><td>24</td></tr>
+      <tr><td>电路台</td><td>阿强</td><td>—</td><td>阿强</td><td>阿强</td><td>—</td><td>—</td><td>小美</td><td>26</td></tr>
+      <tr><td>氮气机</td><td>学徒乙</td><td>学徒乙</td><td>—</td><td>学徒甲</td><td>学徒乙</td><td>—</td><td>学徒甲</td><td>18</td></tr>
+    </tbody>
+  </table>
+  <p class="note">把放大层的窗口缩窄一点，就能看到冻结首列的效果。</p>
+
+  <footer>dsh-table-lens · MIT · 演示页不依赖 DSH，只加载仓库里的 client.js。</footer>
+</main>
+
+<script>
+  // 演示页用的极简 ModuleLoader 桩：真实 DSH 里由宿主提供。
+  window.__ModuleLoader__ = {
+    load(definition) {
+      const plugin = definition.factory(function () {});
+      if (plugin && typeof plugin.apply === 'function') plugin.apply({});
+    },
+  };
+</script>
+<script src="../client.js"></script>
+</body>
+</html>
