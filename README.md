@@ -112,6 +112,10 @@ npx serve .
 # 浏览器打开 http://localhost:3000/demo/
 ```
 
+## 相关插件
+
+同作者的另一个 DSH 插件：[**dsh-reader**](https://github.com/anymorisv/dsh-reader) —— 聊天正文排版增强 + 「标签：说明」清单自动变卡片，可在插件面板里开关。
+
 ## English
 
 A tiny DSH Web plugin that upgrades Markdown tables: click any table to open a full-screen
